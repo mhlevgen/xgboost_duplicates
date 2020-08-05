@@ -3,3 +3,4 @@ __pycache__/
 data/
 src/.ipynb_checkpoints
 src/*.ipynb
+!data/preprocessed/one_hot_encoder.bin
