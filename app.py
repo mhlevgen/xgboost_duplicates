@@ -18,7 +18,7 @@ input_preprocessor = PreprocessInput(one_hot_encoder=one_hot_encoder)
 
 
 @app.route('/predict', methods=['POST'])
-def hello():
+def predict_duplicates():
     start = time.time()
 
     input_df = pd.DataFrame(request.json)
