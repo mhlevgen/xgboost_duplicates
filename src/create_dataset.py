@@ -13,16 +13,19 @@ from sklearn.preprocessing import OneHotEncoder
 import nltk
 from nltk.corpus import stopwords
 from pymystem3 import Mystem
+from dotenv import load_dotenv
+load_dotenv()
 
 from config import PREPROCESSED_DATA_DIR, MODELS_DIR
 
+DB_KEY = os.getenv("PGPASSWORD")
 PATH_TO_NLTK_DATA = os.path.join(MODELS_DIR, 'nltk_data')
 nltk.data.path.append(PATH_TO_NLTK_DATA)
 
 
 class LoadDataFromDb:
     def __init__(self):
-        my_connection_string = 'postgresql://postgres:test-task@localhost:8213/postgres'
+        my_connection_string = f'postgresql://postgres:{DB_KEY}@localhost:8213/postgres'
         self.engine = create_engine(my_connection_string)
 
     def select(self, query):

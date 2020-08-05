@@ -4,3 +4,4 @@ data/
 !data/preprocessed/one_hot_encoder.bin
 src/.ipynb_checkpoints
 src/*.ipynb
+.env
